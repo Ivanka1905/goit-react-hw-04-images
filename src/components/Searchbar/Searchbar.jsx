@@ -9,7 +9,7 @@ const Searchbar = ({ handleFormSubmit }) => {
 
   const handleNameChange = e => {
     setPictureName(e.currentTarget.value.toLowerCase());
- };
+  };
 
   const handleSubmit = event => {
     event.preventDefault();
@@ -27,7 +27,6 @@ const Searchbar = ({ handleFormSubmit }) => {
     }
     handleFormSubmit(pictureName);
     setPictureName('');
-     // this.setState({ pictureName: '', page: 1 });
   };
 
   return (
@@ -50,60 +49,6 @@ const Searchbar = ({ handleFormSubmit }) => {
     </header>
   );
 };
-
-// class Searchbar extends Component {
-//   state = {
-//     pictureName: '',
-//   };
-
-//   handleNameChange = event => {
-//     this.setState({ pictureName: event.currentTarget.value.toLowerCase() });
-//   };
-
-//   handleSubmit = event => {
-//     event.preventDefault();
-//     const { pictureName } = this.state;
-//     if (pictureName.trim() === '') {
-//       toast.warn('Введіть слово', {
-//         position: 'top-right',
-//         hideProgressBar: false,
-//         closeOnClick: true,
-//         pauseOnHover: true,
-//         draggable: true,
-//         progress: undefined,
-//         theme: 'colored',
-//       });
-
-//       this.setState({ pictureName: '', page: 1 });
-//       return;
-//     }
-//     this.props.handleFormSubmit(pictureName);
-//     this.setState({ pictureName: '', page: 1 });
-//   };
-
-//   render() {
-//     const { handleSubmit, handleNameChange, state } = this;
-//     return (
-//       <header className={css.Searchbar}>
-//         <form className={css.SearchForm} onSubmit={handleSubmit}>
-//           <button type="submit" className={css.SearchFormButton}>
-//             <span className={css.SearchFormButtonLabel}>Search</span>
-//           </button>
-
-//           <input
-//             className={css.SearchFormInput}
-//             type="text"
-//             autoComplete="off"
-//             autoFocus
-//             placeholder="Search images and photos"
-//             value={state.pictureName}
-//             onChange={handleNameChange}
-//           />
-//         </form>
-//       </header>
-//     );
-//   }
-// }
 
 Searchbar.propTypes = {
   handleFormSubmit: PropTypes.func,
